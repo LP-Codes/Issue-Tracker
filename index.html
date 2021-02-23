@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Issue-Tracker</title>
+    <!-- adding Bootstrap CSS classes for applying styling to the user interface components. The easiest way to include Bootstrap is to add it from CDN. -->
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body onload="fetchIssues()"> 
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Quest-Test</a>
+          </div>
+          
+      </nav>
+
+    <div class="container">
+      <h1 class="bg-primary text-center">Issue-Tracker</h1>
+      <div class="jumbotron">
+        <h3>Add New Issue</h3>
+        <!-- creating a form to keep things organised -->
+        <form id="myform1">
+          <!-- form - group  class -->
+          <div class="form-group">
+            <label for="issueDescInput">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="issueDescInput"
+              placeholder="Describe the issue ..."
+            />
+          </div>
+          <div class="form-group">
+            <label for="issueDescInput">Severity</label>
+            <select class="form-control" id="issueSeverityInput">
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="issueDescInput">Assigned To</label>
+            <input
+              type="text"
+              class="form-control"
+              id="issueAssignedToInput"
+              placeholder="Enter responsible ..."
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div id="issuesList"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+    <!-- going to use a small JS library (ChanceJS) to generate unique identifiers for issues -->
+    <script src="http://chancejs.com/chance.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
