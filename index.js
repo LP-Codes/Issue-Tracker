@@ -35,44 +35,42 @@ function saveIssue(e) {
   issue_list.appendChild(li);
   //   creating object req for local storage
 
-  let inputs = {
+  var inputs = {
     title1: title,
     isssuedecp: isssuedecp,
     testname1: testname,
     sevrty1: sevrty,
   };
-  let issues = [];
-  issues.push(inputs);
-  console.log(issues);
-  localStorage.setItem("issueslist", JSON.stringify(issues));
-  //   for clearing input
-  document.getElementById("myform1").reset();
 
-  // if (localStorage.getItem("issueslist") === null) {
-  //   //   issue object is inserted into the issues object in Local Storage
-  //   var issues = [];
-  //   issues.push(inputs);
-  //   localStorage.setItem("issues", JSON.stringify(issues));
-  // } else {
-  //   var issues = JSON.parse(localStorage.getItem("issueslist"));
-  //   issues.push(inputs);
-  //   localStorage.setItem("issues", JSON.stringify(issues));
-  // }
+  // if firsttime page loads save to locak storage
+  if (localStorage.getItem("issueslist") === null) {
+    var issues = [];
+
+    issues.push(inputs);
+    localStorage.setItem("issueslist", JSON.stringify(issues));
+  } else {
+    // if already  a local stoarge save parse & push so dont overwrites its value
+    var issues = JSON.parse(localStorage.getItem("issueslist"));
+    issues.push(inputs);
+    localStorage.setItem("issueslist", JSON.stringify(issues));
+  }
+
+  // reseting the form input tabs
+  document.getElementById("myform1").reset();
 }
 function oldf() {
+  var issues = JSON.parse(localStorage.getItem("issueslist"));
+  var issue_list = document.getElementById("issuesList");
+  issue_list.innerHTML = "";
 
-    var issues = JSON.parse(localStorage.getItem("issueslist"));
-    var issue_list = document.getElementById("issuesList");
-    issue_list.innerHTML = "";
-  
-    for (let index = 0; index < issues.length; index++) {
-      const titleold = issues[index].title1;
-      const issold = issues[index].isssuedecp;
-      const testnameold = issues[index].testname1;
-      const svrtold = issues[index].sevrty1;
-  
-      let li = document.createElement("tbody");
-      li.innerHTML += ` <table class="table table-bordered"><thead class="bg-secondary text-light">
+  for (let index = 0; index < issues.length; index++) {
+    const titleold = issues[index].title1;
+    const issold = issues[index].isssuedecp;
+    const testnameold = issues[index].testname1;
+    const svrtold = issues[index].sevrty1;
+
+    let li = document.createElement("tbody");
+    li.innerHTML += ` <table class="table table-bordered"><thead class="bg-secondary text-light">
       <tr>
           <th>Title</th>
           <th>Description</th>
@@ -87,9 +85,9 @@ function oldf() {
               <td>${svrtold}</td>
               </tr>
               </tbody></table>`;
-      //   append for displaying on html
-      issue_list.appendChild(li);
-      //   for clearing input
-      // document.getElementById("myform1").reset();
-    }
+    //   append for displaying on html
+    issue_list.appendChild(li);
+    //   for clearing input
+    // document.getElementById("myform1").reset();
+  }
 }
