@@ -32,7 +32,7 @@ function saveIssue(e) {
     <td>${isssuedecp}</td>
     <td>${testname}</td>
     <td>${sevrty}</td>
-    <td><button type="submit" class="btn btn-warning text-center" onclick="deleteRow(this)" >Delete</button></td>
+    <td><button type="submit" class="btn btn-warning text-center" onclick="deleteRow(this)" >Delete <i class="fas fa-trash-alt"></i></button></td>
     </tr>
     </tbody></table>`;
   //   append for displaying on html
@@ -88,7 +88,7 @@ function oldf() {
               <td>${issold}</td>
               <td>${testnameold}</td>
               <td>${svrtold}</td>
-              <td><button type="submit" class="btn btn-warning text-center" onclick="deleteRow(this)" >Delete</button></td>
+              <td><button type="submit" class="btn btn-warning text-center" onclick="deleteRow(this)" >Delete <i class="fas fa-trash-alt"></i></button></td>
               </tr>
               </tbody></table>`;
     //   append for displaying on html
