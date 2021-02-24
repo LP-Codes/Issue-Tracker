@@ -1,3 +1,4 @@
+  
 document.getElementById("myform1").addEventListener("submit", saveIssue);
 
 // to display-add issues on page
@@ -22,7 +23,6 @@ function saveIssue(e) {
           <th>Severity</th>
       </tr>
   </thead>
-
 </table><tbody>
     <tr>
     <td>${title}</td>
