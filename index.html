@@ -16,25 +16,29 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <!-- Add icon library --> 
-<!-- Add icon library -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <!-- Add jsquery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+      integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+      crossorigin="anonymous"
+    />
   </head>
 
-  <body onload="oldf()"  >
-    <!-- <div>
-      <nav >
-        <img alt="Brand" src="./1.jfif" width="100" height="75" />
-      </nav>
-    </div> -->
+  <body onload="oldf()">
     <div class="container-fluid">
-      <h1 class="text-center bg-info text-light font-weight-bolder "><i class="fa fa-bug ">-</i>Internal Issue Tracker</h1>
+      <h1 class="text-center bg-info text-light font-weight-bolder">
+        <i class="fa fa-bug">-</i>Internal Issue Tracker
+      </h1>
       <hr />
       <form id="myform1">
         <div class="jumbotron p-3">
           <div class="form-group">
-            <label for="Issue Title " class="p-1 font-weight-bold">Title <i class="fas fa-book-reader"></i></label>
+            <label for="Issue Title " class="p-1 font-weight-bold"
+              >Title <i class="fas fa-book-reader"></i
+            ></label>
             <input
               type="text"
               class="form-control"
@@ -44,7 +48,9 @@
           </div>
 
           <div class="form-group">
-            <label for="Issue Descreption" class="p-2 font-weight-bold">Issue Description <i class="far fa-keyboard"></i></label>
+            <label for="Issue Descreption" class="p-2 font-weight-bold"
+              >Issue Description <i class="far fa-keyboard"></i
+            ></label>
             <input
               type="text"
               class="form-control"
@@ -53,7 +59,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="Tester Name" class="p-2 font-weight-bold">Tester Name <i class="fas fa-male"></i></label>
+            <label for="Tester Name" class="p-2 font-weight-bold"
+              >Tester Name <i class="fas fa-male"></i
+            ></label>
             <input
               type="text"
               class="form-control"
@@ -62,7 +70,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="Issue Severity" class="font-weight-bold">Severity <i class="fas fa-exclamation-triangle "></i></label>
+            <label for="Issue Severity" class="font-weight-bold"
+              >Severity <i class="fas fa-exclamation-triangle"></i
+            ></label>
             <select id="issueSeverityInput" class="form-control p-1">
               <option value="Low">Low</option>
               <option value="Medium">Medium</option>
@@ -70,13 +80,21 @@
             </select>
             <br />
           </div>
-          <button type="submit" class="btn btn-warning text-cente font-weight-bolder" id="btn1">
+          <button
+            type="submit"
+            class="btn btn-warning text-cente font-weight-bolder"
+            id="btn1"
+            
+          >
             ADD - <i class="far fa-plus-square"></i>
           </button>
         </div>
       </form>
       <div>
-        <table id="issuesList" class="table table-bordered text-center jumbotron">
+        <table
+          id="issuesList"
+          class="table table-bordered text-center jumbotron"
+        >
           <thead class="bg-secondary text-light">
             <tr>
               <th>Title</th>
@@ -86,7 +104,13 @@
             </tr>
           </thead>
         </table>
-        <button id = "clear1" class="badge-danger text-center float-md-right  font-weight-bold" onclick="deleteIssue()">Clear All <i class="fas fa-skull-crossbones"></i></button>
+        <button
+          id="clear1"
+          class="badge-danger text-center float-md-right font-weight-bold"
+          onclick="deleteIssue()"
+        >
+          Clear All <i class="fas fa-skull-crossbones"></i>
+        </button>
       </div>
     </div>
 
