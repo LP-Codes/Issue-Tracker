@@ -14,7 +14,7 @@ function saveIssue(e) {
   const testname = document.getElementById("inpt3").value;
   const sevrty = document.getElementById("issueSeverityInput").value;
 
-  if ((title === "", isssuedecp === "", testname === "")) {
+  if ((title === ""||isssuedecp === ""||testname === "")) {
     alert("Please fill all fields ");
   } else {
     //   create body & add input value
@@ -67,6 +67,7 @@ function saveIssue(e) {
     document.getElementById("myform1").reset();
   }
 }
+
 function oldf() {
   const issues = JSON.parse(localStorage.getItem("issueslist"));
   const issue_list = document.getElementById("issuesList");
