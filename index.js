@@ -14,7 +14,7 @@ function saveIssue(e) {
   const testname = document.getElementById("inpt3").value;
   const sevrty = document.getElementById("issueSeverityInput").value;
 
-  if ((title === ""||isssuedecp === ""||testname === "")) {
+  if (title === "" || isssuedecp === "" || testname === "") {
     alert("Please fill all fields ");
   } else {
     //   create body & add input value
@@ -36,7 +36,7 @@ function saveIssue(e) {
     <td>${isssuedecp}</td>
     <td>${testname}</td>
     <td>${sevrty}</td>
-    <td><button type="submit" class="btn btndel btn-warning text-center" onclick="deleteRow(this)" >Delete <i class="fas fa-trash-alt"></i></button></td>
+    <td><button  class="btn btndel btn-warning text-center" onclick="deleteRow(this)" id="pp">Delete <i class="fas fa-trash-alt"></i></button></td>
     </tr>
     </tbody></table>`;
     //   append for displaying on html
@@ -94,7 +94,7 @@ function oldf() {
               <td>${issold}</td>
               <td>${testnameold}</td>
               <td>${svrtold}</td>
-              <td><button type="submit" class="btn  btndel btn-warning text-center" onclick="deleteRow(this)" >Delete <i class="fas fa-trash-alt"></i></button></td>
+              <td><button class="btn  btndel btn-warning text-center" onclick="deleteRow(this)" id="pp" >Delete <i class="fas fa-trash-alt"></i></button></td>
               </tr>
               </tbody></table>`;
     //   append for displaying on html
@@ -114,18 +114,21 @@ function deleteIssue() {
 }
 
 function deleteRow(r) {
-  // const issues2 = JSON.parse(localStorage.getItem("issueslist"));
+ 
+
+  // this.closest("tbody").remove();
+  const issues2 = JSON.parse(localStorage.getItem("issueslist"));
   // var i = r.parentNode.rowIndex;
   // document.getElementById("issuesList").deleteRow(i);
-  $(document).ready(function () {
-    $(".btndel").on('click  dblclick',function (e) { 
-      // e.preventDefault();
-      // alert('l')
-      $(this).closest('tbody').remove();
-      e.stopPropagation(); 
-      
-      
-    });
+  
+  $(".btndel").click(function (e) {
+    // confirm("Are You Sure")
+    
+    $(this).closest("tbody").remove();
+   
+    e.preventDefault();
   });
-  // localStorage.removeItem(issues2[this.i])
+
+  localStorage.removeItem(issues2[this.i])
 }
+
