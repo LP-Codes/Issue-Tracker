@@ -1,4 +1,4 @@
 # Issue-Tracker
-Simple Issue Tracker Application Using Vanilla Javascript& BootStrap4 
-Open for suggestions
+Simple Issue Tracker Application Using Javascript , Jquery & BootStrap4 
+Open for suggestions & commits for improvements 
 
