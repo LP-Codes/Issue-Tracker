@@ -118,10 +118,11 @@ function deleteRow(r) {
   // var i = r.parentNode.rowIndex;
   // document.getElementById("issuesList").deleteRow(i);
   $(document).ready(function () {
-    $(".btndel").click(function (e) { 
-      e.preventDefault();
+    $(".btndel").on('click  dblclick',function (e) { 
+      // e.preventDefault();
       // alert('l')
       $(this).closest('tbody').remove();
+      e.stopPropagation(); 
       
       
     });
